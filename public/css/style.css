@@ -1,0 +1,221 @@
+body {
+    background-color: rgb(237, 238, 240);
+}
+
+.auth {
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    border-radius: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    margin: -125px 0 0 -125px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 255);
+}
+
+.authInps {
+    border-bottom: 2px solid rgb(0 0 255 / 1);
+    border-top: 2px solid rgb(0 0 255 / 1);
+    border-left: 2px solid rgb(255 255 255 / 1);
+    border-right: 2px solid rgb(255 255 255 / 1);
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+
+}
+
+#signInBtn {
+    width: auto;
+    margin: 10px;
+
+}
+
+.divRoom {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 2px solid #ed6363;
+    border-bottom: 2px solid gray;
+    width: auto;
+    background-color: rgb(249 249 249);
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.divRoom:hover {
+    border-top: 2px solid rgb(0 0 255 / 1);
+}
+
+.divUser {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 2px solid #ff874b;
+    border-bottom: 2px solid gray;
+    width: auto;
+    background-color: rgb(249 249 249);
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.divUser:hover {
+    border-top: 2px solid rgb(108, 182, 59);
+}
+
+#divUsersList {
+    border-right: 2px solid blue;
+    width: 20%;
+    position: absolute;
+    height: 'auto';
+    min-height: 500px;
+    padding: 10px;
+}
+
+#messages {
+    width: 100%;
+    height: 460px;
+    margin-bottom: 3px;
+    border-bottom: 2px solid rgb(238 238 238);
+    max-height: 460px;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255)
+}
+
+#divChat {
+    position: absolute;
+    margin-left: 25%;
+    width: 40%;
+    height: 520px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 0px;
+}
+
+.notification {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: arial;
+    font-size: 12px
+}
+
+#container {
+    width: auto;
+    border: 2px solid rgb(81, 82, 155);
+    border-radius: 10px;
+    height: 650px;
+
+}
+
+#messageInp {
+    height: 25px;
+    width: 80%;
+    border-top: solid white;
+    border-left: solid white;
+    border-right: solid white;
+    border-bottom: solid rgb(0, 0, 255);
+}
+
+button {
+    width: auto;
+    color: white;
+    border-left: solid white;
+    border-right: solid white;
+    background-color: blue;
+    border-top: solid blue;
+    border-bottom: solid blue;
+}
+
+.sendComponents {
+    margin-left: 5px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+#sendBttn:hover {
+    color: white;
+    border-left: solid white;
+    border-right: solid white;
+    background-color: rgb(84, 84, 232);
+    border-top: solid rgb(84, 84, 232);
+    border-bottom: solid rgb(84, 84, 232);
+}
+
+.senderMessage {
+    text-align: left;
+    height: auto;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    word-break: break-all;
+    max-width: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: arial;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* about rooms */
+#roomsContainer {
+    border-left: 2px solid blue;
+    width: 20%;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    margin-left: 850px;
+}
+
+#divRoomsList {
+    height: auto;
+    min-height: 350px;
+}
+
+#leaveRoomBtn {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    margin-top: 1%;
+    top: 0;
+    border-radius: 360px;
+    background-color: rgb(255, 255, 255);
+    padding: 6px 10px;
+    color: rgb(0, 0, 255);
+    border: 2px solid rgb(0, 0, 255);
+}
+
+#leaveRoomBtn:hover {
+    box-shadow: 0 0 6px rgba(0, 0, 255, 0.7);
+}
+
+.hide {
+    display: none;
+}
+
+.senderName {
+    display: inline-block;
+    margin-left: 10px;
+    color: rgb(31 20 160);
+    font-family: arial;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.info {
+    font-family: arial;
+    font-size: 15px;
+}
+
+#roomNameInp {
+    border-bottom: 2px solid rgb(0 0 255 / 1);
+    border-top: 2px solid rgb(255 255 255 / 1);
+    border-left: 2px solid rgb(255 255 255 / 1);
+    border-right: 2px solid rgb(255 255 255 / 1);
+    padding: 5px;
+    margin-bottom: 5px;
+}
