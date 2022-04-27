@@ -13,9 +13,10 @@ const CONFIG = {
         GET_ROOMS_LIST: 'GET_ROOMS_LIST', //Сидит в ChatManager.js
         SHOW_USERS_IN_ROOM: 'SHOW_USERS_IN_ROOM', //Сидит в Messanger.js
         SEND_ROOMS_LIST: 'SEND_ROOMS_LIST', //Сидит в ChatManager.js
-        SHOW_ROOMS_LIST: 'SHOW_ROOMS_LIST',//Сидит в Messanger.js
+        SHOW_ROOM_ID: 'SHOW_ROOM_ID',//Сидит в Messanger.js
         GET_USER_ID_BY_SOCKET_ID: 'GET_USER_ID_BY_SOCKET_ID',//Сидит в Authorization.js
-        SEND_USER_ID_BY_SOCKET_ID: 'SEND_USER_ID_BY_SOCKET_ID'//Сидит в UserManager.js
+        SEND_USER_ID_BY_SOCKET_ID: 'SEND_USER_ID_BY_SOCKET_ID',//Сидит в UserManager.js
+        SHOW_ROOM: 'SHOW_ROOM'
     },
 
     MEDIATOR: {

@@ -40,12 +40,12 @@ class UserManager extends BaseModule {
     //список пользаков, которые онлайн
     _sendUserData(data = {}, socket) { //сейчас используется при авторизация вместо метода 'login'
         let flag = true; //используется под цикл подбора id пользаку
-        const { userName, login } = data; //из полученных данных вылавливаем ник и логин
+        const { userName } = data; //из полученных данных вылавливаем ник и логин
         while (flag) { //он будет срабатывать до тех пор, пока не подберется свободный id
             let id = Math.floor(Math.random(0) * 100000); //генерируем радномный айдишник
             let index = this.users.findIndex(el => el.id == id); //ищем пользака с таким id
             if (index == -1) { //если его нет
-                this.users.push({ id: id, name: userName, log: login, socket_id: socket.id }); //добавляем пользователя в список пользователей + его id
+                this.users.push({ id: id, name: userName, socket_id: socket.id }); //добавляем пользователя в список пользователей + его id
                 //Note: добавить еще токен
                 //this.io.emit(this.SOCKET_MESSAGES.GET_USERS_LIST, { id, userName }); //отправляем на клиенты ник пользака и его id ()
                 flag = false; //завершаем цикл

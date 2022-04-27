@@ -5,14 +5,14 @@ const io = require('socket.io')(server, {
     origins: ['http://localhost:3000'],
 });
 
-const { NAME, PORT, SOCKET_MESSAGES, MEDIATOR } = require('./config.js');
+const { NAME, PORT, SOCKET_MESSAGES, MEDIATOR } = require('./config');
 const Mediator = require('./application/modules/Mediator');
 const UserManager = require('./application/modules/users/UserManager');
-const ChatManager = require('./application/modules/chat/ChatManager');
+const GameManager = require('./application/modules/games/GameManager');
 
 const mediator = new Mediator(MEDIATOR);
 const users = new UserManager({ io, SOCKET_MESSAGES, mediator });
-new ChatManager({ io, SOCKET_MESSAGES, mediator });
+new GameManager({ io, SOCKET_MESSAGES, mediator });
 
 const Router = require('./application/router/router');
 const router = new Router({ users });

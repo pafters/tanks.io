@@ -4,16 +4,20 @@ class Markup {
     }
 
     showMarkup = (divId) => {
+        const divMenu = document.getElementById(`${divId}`);
         switch (divId) {
             case 'menu':
-                const divMenu = document.getElementById(`${divId}`);
                 divMenu.innerHTML = `
                 <button id = "createRoomBtn">Создать комнату</button>
-                <div id = "outputId" value ="qwerty">qwerty</div>
+                <div id = "roomIdContainer"></div>
                 <button id = "enterBtn">Войти</button>
                 `;
-            break;
-
+                break;
+            case 'game':
+                divMenu.innerHTML = `
+                <div id = "game">Игра</div>
+                `;
+                break;
         }
     }
 }
