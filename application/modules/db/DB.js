@@ -15,11 +15,44 @@ class DB {
         if (this.db) this.db.close();
     }
 
-    getUserByLogin(login) {
+    getUserByName(name) {
         return new Promise(resolve =>
             this.db.serialize(() => {
-                const query = "SELECT * FROM users WHERE login=?";
-                this.db.get(query, [login], (err, row) => resolve(err ? null : row));
+                const query = "SELECT * FROM users WHERE name=?";
+                this.db.get(query, [name], (err, row) => resolve(err ? null : row));
+            })
+        );
+    }
+
+
+    createUser(name) {
+        return new Promise(resolve => {
+            const query = "INSERT INTO `users` (name) VALUES (?)";
+            this.db.run(query, [name], err => resolve(err));
+        });
+    }
+
+    removeUserByName(name) {
+        return new Promise(resolve => {
+            const query = "DELETE FROM `users` WHERE name = ?";
+            this.db.run(query, [name], err => resolve(err));
+        });
+    }
+
+    findUserByName(name) {
+        return new Promise(resolve =>
+            this.db.serialize(() => {
+                const query = 'SELECT name FROM users WHERE name = ?';
+                this.db.get(query, [name], (err, row) => resolve(err ? null : row));
+            })
+        );
+    }
+
+    getUserIdByName(name) {
+        return new Promise(resolve =>
+            this.db.serialize(() => {
+                const query = 'SELECT id FROM users WHERE name = ?';
+                this.db.get(query, [name], (err, row) => resolve(err ? null : row));
             })
         );
     }

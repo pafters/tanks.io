@@ -1,6 +1,7 @@
 class BaseModule {
-    constructor({ io, SOCKET_MESSAGES, mediator }) {
+    constructor({ io, SOCKET_MESSAGES, mediator, db }) {
         this.io = io;
+        this.db = db;
         this.mediator = mediator;
         this.SOCKET_MESSAGES = SOCKET_MESSAGES;
         this.TRIGGERS = mediator.getTriggerNames();

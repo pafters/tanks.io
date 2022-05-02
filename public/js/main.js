@@ -1,4 +1,5 @@
 window.onload = function () {
     const socket = io(window.location.origin);
-    new Form('menu', socket);
+    new Markup('menu');
+    new Menu(socket, true);
 }

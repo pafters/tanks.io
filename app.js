@@ -11,29 +11,11 @@ const Mediator = require('./application/modules/Mediator');
 const UserManager = require('./application/modules/users/UserManager');
 const GameManager = require('./application/modules/games/GameManager');
 
-const mediator = new Mediator(MEDIATOR);
-const users = new UserManager({ io, SOCKET_MESSAGES, mediator });
-new GameManager({ io, SOCKET_MESSAGES, mediator });
 const db = new DB(DATABASE);
+const mediator = new Mediator(MEDIATOR);
+const users = new UserManager({ io, SOCKET_MESSAGES, mediator, db });
+new GameManager({ io, SOCKET_MESSAGES, mediator, db });
 
-(async () => {
-    let user = await db.getUserByLogin('vasya');
-
-    console.log(user);
-    db.updateUserToken(2, 'petya - durak!');
-    user = await db.getUserByLogin('petya');
-    console.log(user);
-})();
-
-const Router = require('./application/router/router');
-const router = new Router({ users });
-
-io.on('connection', socket => {
-    console.log('connected ', socket.id);
-    socket.on('disconnect', () => console.log('disconnect', socket.id));
-});
-
-app.use('/', router);
 app.use(express.static('public'));
 
 server.listen(PORT, () => console.log('все ок, работаем', NAME));
