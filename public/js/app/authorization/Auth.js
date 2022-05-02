@@ -1,6 +1,5 @@
 class Auth {
     constructor(socket, flag = false) {
-        this.mass = [];
         this.flag = flag;
         this.socket = socket;
         this.inpName;
@@ -29,7 +28,6 @@ class Auth {
 
     addEventListeners() {
         this.enterBtn.addEventListener('click', () => {
-            console.log('abort');
             const name = this.inpName.value;
             const joinTag = `room${this.inpRoomId.value}`;
             if (name && joinTag) {
@@ -47,9 +45,8 @@ class Auth {
 
     showJoystick(data) {
         const { name, joinTag } = data;
-        console.log(data);
         new Markup('joystick');
-        this.mass.push(new Joystick(this.socket, true, name, joinTag));
+        new Joystick(this.socket, true, name, joinTag);
         this.flag = false;
         //this.joystick.joinTag = joinTag;
         //this.joystick.roomId = roomId;
